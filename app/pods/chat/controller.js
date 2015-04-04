@@ -4,7 +4,8 @@ export default Ember.Controller.extend({
   loggedIn: Ember.computed.alias('session.isConnected'),
   users: null,
   rooms: Ember.computed.alias('sessionUser.messageRooms'),
-  sessionUser: null,
+  application: Ember.inject.controller(),
+  sessionUser: Ember.computed.alias('application.sessionUser'),
 
   allUsersButMe: function() {
     var allButMe = Ember.A(this.get('users'));
