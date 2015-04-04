@@ -12,8 +12,8 @@ var scrollDown = function(){
 };
 
 export default Ember.Controller.extend({
-  chat: Ember.inject.controller(),
-  sessionUser: Ember.computed.alias('chat.sessionUser'),
+  application: Ember.inject.controller(),
+  sessionUser: Ember.computed.alias('application.sessionUser'),
 
   otherPerson: function(){
     if(this.get('model')){
